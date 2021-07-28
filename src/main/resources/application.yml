@@ -28,7 +28,7 @@ spring:
     config:
       server:
         git:
-          uri: ${REPO:file:///C:/oss/configs/}
+          uri: ${REPO:file:///C:/Development/centralized-config-data/configs/} # change to where the yaml configs are located
           force-pull: true
           cloneOnStart: true
           searchPaths: ${ASPNETCORE_ENVIRONMENT:default}
@@ -36,7 +36,7 @@ spring:
 spring:
   profiles: cloud
 eureka:
-  password: ${EUREKA_SPRING_SECURITY_USER_PASSWORD:GTPRocks!}
+  password: ${EUREKA_SPRING_SECURITY_USER_PASSWORD:configPassword123}
   instance:
     hostname: ${vcap.application.uris[0]}
     nonSecurePort: 80
